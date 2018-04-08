@@ -277,7 +277,7 @@ func (c *Conn) Send(to, msg string) error {
 	return err
 }
 
-func (c *Conn) SendCustomMsg(msg) error {
+func (c *Conn) SendCustomMsg(msg string) error {
 	_, err := fmt.Fprint(c.out, msg)
 	return err
 }
