@@ -277,6 +277,11 @@ func (c *Conn) Send(to, msg string) error {
 	return err
 }
 
+func (c *Conn) SendCustomMsg(msg) error {
+	_, err := fmt.Fprint(c.out, msg)
+	return err
+}
+
 // SendPresence sends a presence stanza. If id is empty, a unique id is
 // generated.
 func (c *Conn) SendPresence(to, typ, id string) error {
